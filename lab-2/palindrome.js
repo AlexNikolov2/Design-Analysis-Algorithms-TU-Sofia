@@ -10,7 +10,7 @@ function Palindrome() {
     }
     reverse = reverse.join('');
 
-    if (string === reverse) {
+    if (string == reverse) {
         isPalindrome = true;
     }
 
