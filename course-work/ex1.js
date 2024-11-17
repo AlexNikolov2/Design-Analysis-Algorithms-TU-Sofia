@@ -1,1 +1,1 @@
-function primeNumsInPerimeter(matrix) {}
+function primeNumsInPerimeter(matrix) { };
