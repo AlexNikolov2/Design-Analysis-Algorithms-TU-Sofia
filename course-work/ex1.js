@@ -1,4 +1,4 @@
-function primeNumsInPerimeter(matrix) {
+function primeNumsInPerimeter(n, m) {
 
     const isPrime = (num) => {
         if (num < 2) return false;
@@ -8,11 +8,18 @@ function primeNumsInPerimeter(matrix) {
         return true;
     };
 
+    const matrix = Array.from({ length: n }, () =>
+        Array.from({ length: m }, () => Math.floor(Math.random() * 1000))
+    );
+
+    console.table(matrix);
+
+
     let count = 0;
 
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {
-            if (i == 0 || j == 0 || j == matrix.length - 1 || i == matrix.length - 1) {
+            if (i == 0 || j == 0 || j == n - 1 || i == m - 1) {
                 let checkedNum = matrix[i][j]
                 if (isPrime(checkedNum)) {
                     console.log(checkedNum);
@@ -26,7 +33,4 @@ function primeNumsInPerimeter(matrix) {
     console.log(count);
 
 };
-primeNumsInPerimeter([[1, 2, 3, 4],
-[5, 6, 7, 8],
-[9, 10, 11, 12],
-[13, 14, 15, 16]])
+primeNumsInPerimeter(6, 3)
