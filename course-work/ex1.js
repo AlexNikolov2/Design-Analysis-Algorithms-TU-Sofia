@@ -9,7 +9,7 @@ function primeNumsInPerimeter(n, m) {
     };
 
     const matrix = Array.from({ length: n }, () =>
-        Array.from({ length: m }, () => Math.floor(Math.random() * 1000))
+        Array.from({ length: m }, () => Math.floor(Math.random() * Number.MAX_SAFE_INTEGER))
     );
 
     console.table(matrix);
