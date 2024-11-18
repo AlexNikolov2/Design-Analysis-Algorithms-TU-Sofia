@@ -33,10 +33,6 @@ function fibonacciMemo(n, memo = []) {
 
 console.log(fibonacciMemo(10));
 
-console.log(callsAlfa);
-console.log(callsBeta);
-
-
 
 // tablical with iteration
 

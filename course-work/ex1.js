@@ -9,7 +9,7 @@ function primeNumsInPerimeter(n, m) {
     };
 
     const matrix = Array.from({ length: n }, () =>
-        Array.from({ length: m }, () => Math.floor(Math.random() * Number.MAX_SAFE_INTEGER))
+        Array.from({ length: m }, () => Math.floor(Math.random() * 10))
     );
 
     console.table(matrix);
@@ -33,4 +33,4 @@ function primeNumsInPerimeter(n, m) {
     console.log(count);
 
 };
-primeNumsInPerimeter(6, 3)
+primeNumsInPerimeter(3, 3)
