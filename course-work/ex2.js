@@ -1,24 +1,18 @@
 //recursive innefective
 
-let callsAlfa = 0;
-let callsBeta = 0;
-
 function fibonacci(n) {
-    callsAlfa++
     if (n <= 1) {
         return n;
     }
 
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
-
-console.log(fibonacci(10));
+console.log(fibonacci(150));
 
 
 //recursive with memo
 
 function fibonacciMemo(n, memo = []) {
-    callsBeta++
     if (memo[n] !== undefined) {
         return memo[n];
     }
@@ -30,8 +24,7 @@ function fibonacciMemo(n, memo = []) {
 
     return memo[n];
 }
-
-console.log(fibonacciMemo(10));
+console.log(fibonacciMemo(150));
 
 
 // tablical with iteration
