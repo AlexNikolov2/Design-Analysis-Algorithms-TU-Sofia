@@ -56,5 +56,7 @@ function countPerimeterPrimes(n, m) {
         if (isPrime(value, primes)) count++;
     }
 
-    return count;
+    console.log(count);
+
 }
+countPerimeterPrimes(3, 3)
