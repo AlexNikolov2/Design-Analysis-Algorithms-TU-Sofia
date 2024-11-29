@@ -26,8 +26,24 @@ function isPrime(num, primes) {
     return true;
 }
 
+function generateRandomGrid(n, m) {
+    const grid = [];
+    for (let i = 0; i < n; i++) {
+        const row = [];
+        for (let j = 0; j < m; j++) {
+            row.push(Math.floor(Math.random() * 10) + 1);
+        }
+        grid.push(row);
+    }
+    return grid;
+}
+
 function countPerimeterPrimes(n, m) {
-    const limit = Math.max(n * m, Math.floor(Math.sqrt(n * m)) + 1);
+
+    const grid = generateRandomGrid(n, m);
+    console.log("Generated Grid:", grid);
+
+    const limit = 10;
     const isPrimeUpToLimit = sieveOfEratosthenes(limit);
 
     const primes = [];
@@ -37,26 +53,23 @@ function countPerimeterPrimes(n, m) {
 
     let count = 0;
 
-    for (let j = 1; j <= m; j++) {
-        if (isPrime(j, primes)) count++;
+    for (let j = 0; j < m; j++) {
+        if (isPrime(grid[0][j], primes)) count++;
     }
 
-    for (let i = 2; i <= n; i++) {
-        const value = (i - 1) * m + m;
-        if (isPrime(value, primes)) count++;
+    for (let i = 1; i < n; i++) {
+        if (isPrime(grid[i][m - 1], primes)) count++;
     }
 
-    for (let j = m; j >= 1; j--) {
-        const value = (n - 1) * m + j;
-        if (isPrime(value, primes)) count++;
+    for (let j = m - 1; j >= 0; j--) {
+        if (isPrime(grid[n - 1][j], primes)) count++;
     }
 
-    for (let i = n - 1; i >= 2; i--) {
-        const value = (i - 1) * m + 1;
-        if (isPrime(value, primes)) count++;
+    for (let i = n - 2; i > 0; i--) {
+        if (isPrime(grid[i][0], primes)) count++;
     }
 
-    console.log(count);
-
+    console.log("Number of perimeter primes:", count);
 }
+
 countPerimeterPrimes(3, 3)
