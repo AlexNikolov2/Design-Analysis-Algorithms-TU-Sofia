@@ -3,93 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bounty Store</title>
-    <link rel="stylesheet" href="/styles/style.css" />
+    <title>Berry Farms</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(217, 187, 147);
+        color: rgb(54, 70, 55);
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        color: rgb(191, 33, 38);
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: rgb(54, 70, 55);
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .highlight {
+        color: rgb(191, 33, 38);
+        font-weight: bold;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .section {
+        margin-bottom: 40px;
+      }
+      .berries-image {
+        float: right;
+        margin-left: 20px;
+        max-width: 30%;
+        border-radius: 8px;
+        width: 100px;
+      }
+      .steps h3 {
+        color: rgb(54, 70, 55);
+        font-size: 1.5rem;
+      }
+      .steps p {
+        font-size: 1rem;
+        margin: 10px 0;
+      }
+      em {
+        color: rgb(191, 33, 38);
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>Get The Holidays Filling</h1>
-      <p>Gifts, Decorations, Food & Drinks. Entertaining Ideas & More</p>
-      <div class="buttons">
-        <button>View All Catalogue</button>
-        <button>Visit Our Store</button>
-      </div>
-    </header>
-
-    <section id="countdown">
-      <h2>Christmas is Coming:</h2>
-      <div class="timer">
-        <div id="days">00</div>
-        <div id="hours">00</div>
-        <div id="minutes">00</div>
-        <div id="seconds">00</div>
-      </div>
-    </section>
-
-    <section class="welcome-wrap">
-      <section class="welcome">
-        <img src="img/new-year.jpg" alt="Gift" />
-        <section class="text-welcome">
-          <h3>Welcome to Bounty Store</h3>
+    <div class="container">
+      <img src="./изтеглен файл (2).jfif" alt="Berries" class="berries-image" />
+      <h1>You pick it.<br />We cook it.</h1>
+      <h2>Berry Farms brings it to you.</h2>
+      <p class="highlight">
+        Cobblers, crumbles, crisps and crostatas.<br />
+        Cheesecakes, shortcakes and cupcakes. Pies and tarts.<br />
+        You pick the berries, you pick the dessert, we bring it to you.
+      </p>
+      <div class="steps">
+        <div class="section">
+          <h3>Pick Your Berry</h3>
           <p>
-            Christmas is a family holiday, and there are many things that make
-            every home a charming place. All you need for the festive season,
-            from furniture and homewares to great gifts, are here!
+            Skip the supermarket and head out to Berry Farms. We’ll point you to
+            your <em>favorite seasonal berries</em>—blackberries, blueberries,
+            strawberries or raspberries—and send you on your way.
           </p>
-        </section>
-      </section>
-    </section>
-
-    <section class="gift-guide">
-      <h3>Luxury Gift Guide for Holiday Presents</h3>
-      <button>Get Guide</button>
-    </section>
-
-    <section class="gifts">
-      <h3>Fabulous Gifts for Her</h3>
-      <div class="gift-items">
-        <div>
-          <img src="/img/gold-necklace.webp" alt="Gold Necklace" />
-          <h4>Gold Necklace - $24.8</h4>
-          <button>Buy Now</button>
         </div>
-        <div>
-          <img src="/img/bedding-set.jpg" alt="Bedding" />
-          <h4>Bedding Set - $48.0</h4>
-          <button>Buy Now</button>
+        <div class="section">
+          <h3>Choose Your Dessert</h3>
+          <p>
+            Bring back your bushel of berries and head into our cool kitchen to
+            <em>sample our dessert offerings</em>, review our recipes and place
+            your order.
+          </p>
+        </div>
+        <div class="section">
+          <h3>Savor Your Summer</h3>
+          <p>
+            Relax on our expansive porches while your handpicked berries are
+            transformed into a delectable dessert. Or head on home and
+            <em>we’ll deliver it to your door!</em>
+          </p>
         </div>
       </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2024 Bounty Store. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-      function countdown() {
-        const targetDate = new Date("December 25, 2024 00:00:00").getTime();
-        const timer = setInterval(() => {
-          const now = new Date().getTime();
-          const distance = targetDate - now;
-
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          );
-          const minutes = Math.floor(
-            (distance % (1000 * 60 * 60)) / (1000 * 60)
-          );
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          document.getElementById("days").innerText = days;
-          document.getElementById("hours").innerText = hours;
-          document.getElementById("minutes").innerText = minutes;
-          document.getElementById("seconds").innerText = seconds;
-
-          if (distance < 0) clearInterval(timer);
-        }, 1000);
-      }
-      countdown();
-    </script>
+    </div>
   </body>
 </html>
